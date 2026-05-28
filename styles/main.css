@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: rgb(214, 154, 0);
+    background-color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div-marquesina-nombre-carnet {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.marquesina-nombre-carnet {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: rgb(0, 27, 145);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.div-menu-horizontal {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.logo-image {
+    max-height: 450px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* NAVBAR y CARDS GRID */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.navbar-card {
+    background-color: rgb(15, 25, 75);
+    border: 1px solid rgba(214, 154, 0, 0.2);
+    border-radius: 8px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(26, 25, 0, 0.5);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(214, 154, 0);
+}
+
+.navbar-title {
+    background-color: rgb(25, 25, 25);
+    padding: 12px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(214, 154, 0, 0.1);
+}
+
+.navbar-title a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.navbar-title a:hover {
+    color: #fff;
+}
+
+.navbar-details {
+    padding: 15px 10px;
+    font-size: 0.85rem;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.artist-link a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: block;
+    padding: 2px 0;
+    transition: color 0.15s;
+}
+
+.artist-link a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+.div-navbar-details-image {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-details-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgb(214, 154, 0);
+}
+
+a,
+a:visited {
+    color: rgb(214, 154, 0);
+}
+
+/* FOOTER LEMA */
+.div-marquesina-lema-umg {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(214, 154, 0, 0.1);
+}
+
+.lema-texto {
+    font-style: italic;
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.div-contenido {
+    max-width: 1200px;
+}
+
+.contenido {
+    align-items: center;
+}
+
+.artist-profile {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.artist-profile h3 {
+    color: rgb(214, 154, 0);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.artist-profile h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.artist-profile p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.artist-separator {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(214, 154, 0, 0.5), transparent);
+    margin: 40px 0;
+    width: 80%;
+}
+
+/* CONTENEDOR PRINCIPAL DE LA GALERÍA */
+.galeria-abismo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+
+    column-count: 3;
+    column-gap: 20px;
+
+    padding: 10px;
+}
+
+
+.galeria-item {
+    background-color: rgb(15, 25, 75);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(214, 154, 0, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%) brightness(90%);
+    transition: filter 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.02);
+    border-color: rgb(214, 154, 0);
+    box-shadow: 0 8px 25px rgba(214, 154, 0, 0.2);
+}
+
+.galeria-item:hover img {
+    filter: grayscale(0%) brightness(100%);
+}
+
+@media (max-width: 900px) {
+    .galeria-abismo {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria-abismo {
+        column-count: 1;
+        column-gap: 0;
+    }
+}
+
+/* CONTENEDOR DE TESTIMONIOS */
+.testimonios-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ENCABEZADO DE LA SECCIÓN */
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-seccion h2 {
+    color: rgb(214, 154, 0);
+    /* Oro */
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion .subtitulo-seccion {
+    color: #888;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+/* REJILLA DE TARJETAS */
+.testimonios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* TARJETA INDIVIDUAL */
+.testimonio-card {
+    background-color: rgb(15, 25, 75);
+    /* Azul Abismo */
+    border: 1px solid rgba(214, 154, 0, 0.15);
+    border-radius: 8px;
+    padding: 30px;
+    width: calc(50% - 15px);
+    /* Dos columnas con el gap restado */
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonio-card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(214, 154, 0);
+    /* Brillo dorado al pasar el mouse */
+}
+
+/* TEXTO DEL COMENTARIO */
+.testimonio-comentario p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* AUTOR DEL TESTIMONIO */
+.testimonio-autor h5 {
+    color: rgb(214, 154, 0);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.testimonio-autor span {
+    color: #777;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE: Adaptación a una sola columna para móviles */
+@media (max-width: 768px) {
+    .testimonio-card {
+        width: 100%;
+    }
+}

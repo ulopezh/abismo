@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+body {
+    color: rgb(214, 154, 0);
+    background-color: black;
+}
+
+/* MENU IZQUIERDO */
+.div-menu-izquierdo {
+    position: fixed;
+}
+
+.div-logo-image {
+    display: flex;
+}
+
+.logo-image {
+    max-width: 300px;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    margin-left: 300px;
+    padding: 15px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+}
+
+.artist-image {
+    max-width: 100%;
+}
+
+.text-box {
+    padding: 35px;
+    max-width: 50%;
+}
