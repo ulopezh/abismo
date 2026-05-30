@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria: EL ABISMO</title>
     <link rel="stylesheet" href="styles/main.css">
+
+    <style>
+        .div-marquesina-nombre-carnet {
+            width: 100%;
+            overflow: hidden; /* Esconde el texto cuando se sale de la pantalla */
+            white-space: nowrap; /* Obliga al texto a estar en una sola línea */
+            background-color: #111; /* Color de fondo por si acaso */
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .marquesina-nombre-carnet {
+            display: inline-block;
+            padding-left: 100%; /* Empieza completamente a la derecha */
+            animation: moverMarquesina 15s linear infinite; /* 15 segundos de duración, movimiento continuo e infinito */
+        }
+
+        /* Lógica del movimiento de derecha a izquierda */
+        @keyframes moverMarquesina {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-100%, 0, 0); /* Se desplaza toda su longitud a la izquierda */
+            }
+        }
+
+        /* Pausar la animación cuando el mouse pasa por encima (Efecto extra pro) */
+        .div-marquesina-nombre-carnet:hover .marquesina-nombre-carnet {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 
 <body>
@@ -89,7 +121,7 @@
 
             <div class="artist-profile">
                 <h3>Misión</h3>
-                <h4> Nuestra misión es descentralizar el arte convencional, ofreciendo una plataforma de exhibición y
+                <h4> Nuestra misión es descentralizar el arte unconventional, ofreciendo una plataforma de exhibición y
                     curaduría
                     de obras que exploran el misterio, la introspección y la belleza oculta. Buscamos conectar a
                     espectadores
@@ -122,19 +154,17 @@
     </div>
 
     <script>
-        // 1. Modo Claro / Modo Oscuro
+        // 1. EVENTO Y MANIPULACIÓN DEL DOM: Alternar tema (Modo Claro / Modo Oscuro)
         const botonAmbiente = document.getElementById('btn-ambiente');
         
         botonAmbiente.addEventListener('click', () => {
             if (document.body.style.backgroundColor === 'rgb(18, 18, 18)' || document.body.style.backgroundColor === '#121212') {
-                // Cambiar a modo claro
                 document.body.style.backgroundColor = '#f4f4f4';
                 document.body.style.color = '#1c1c1c';
                 botonAmbiente.textContent = '🌌 Entrar al Abismo';
                 botonAmbiente.style.backgroundColor = '#222';
                 botonAmbiente.style.color = '#fff';
             } else {
-                // Cambiar a modo oscuro (Abismo)
                 document.body.style.backgroundColor = '#121212';
                 document.body.style.color = '#ffffff';
                 botonAmbiente.textContent = '☀️ Salir del Abismo';
@@ -143,7 +173,7 @@
             }
         });
 
-        // 2. USO DEL OBJETO DATE: 
+        // 2. USO DEL OBJETO DATE: Saludo dinámico según la hora en la marquesina
         document.addEventListener('DOMContentLoaded', () => {
             const marquesina = document.querySelector('.marquesina-nombre-carnet');
             const hora = new Date().getHours();
@@ -157,7 +187,6 @@
                 saludo = '¡Buenas noches! 🌙';
             }
 
-           
             marquesina.innerHTML = `<strong>${saludo}</strong> | ` + marquesina.innerHTML;
         });
     </script>
